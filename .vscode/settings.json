@@ -5,6 +5,7 @@
 
   // Auto fix
   "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit",
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
@@ -32,5 +33,18 @@
     "scss",
     "pcss",
     "postcss"
-  ]
+  ],
+
+  // Stylelint
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "postcss",
+    "vue"
+  ],
+
+  "editor.tabSize": 2
 }

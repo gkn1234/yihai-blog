@@ -1,0 +1,68 @@
+:root {
+  --radius: 0.625rem;
+  --background: rgb(255 255 255 / 100%);
+  --foreground: rgb(20 14 35 / 100%);
+  --card: rgb(255 255 255 / 100%);
+  --card-foreground: rgb(20 14 35 / 100%);
+  --popover: rgb(255 255 255 / 100%);
+  --popover-foreground: rgb(20 14 35 / 100%);
+  --primary: rgb(39 29 63 / 100%);
+  --primary-foreground: rgb(250 250 250 / 100%);
+  --secondary: rgb(240 240 250 / 100%);
+  --secondary-foreground: rgb(39 29 63 / 100%);
+  --muted: rgb(240 240 250 / 100%);
+  --muted-foreground: rgb(100 97 163 / 100%);
+  --accent: rgb(240 240 250 / 100%);
+  --accent-foreground: rgb(39 29 63 / 100%);
+  --destructive: rgb(239 68 68 / 100%);
+  --border: rgb(229 231 235 / 100%);
+  --input: rgb(229 231 235 / 100%);
+  --ring: rgb(147 148 208 / 100%);
+  --chart-1: rgb(234 179 8 / 100%);
+  --chart-2: rgb(6 182 212 / 100%);
+  --chart-3: rgb(59 53 129 / 100%);
+  --chart-4: rgb(163 230 53 / 100%);
+  --chart-5: rgb(249 115 22 / 100%);
+  --sidebar: rgb(250 250 250 / 100%);
+  --sidebar-foreground: rgb(20 14 35 / 100%);
+  --sidebar-primary: rgb(39 29 63 / 100%);
+  --sidebar-primary-foreground: rgb(250 250 250 / 100%);
+  --sidebar-accent: rgb(240 240 250 / 100%);
+  --sidebar-accent-foreground: rgb(39 29 63 / 100%);
+  --sidebar-border: rgb(229 231 235 / 100%);
+  --sidebar-ring: rgb(147 148 208 / 100%);
+}
+
+.dark {
+  --background: rgb(20 14 35 / 100%);
+  --foreground: rgb(250 250 250 / 100%);
+  --card: rgb(39 29 63 / 100%);
+  --card-foreground: rgb(250 250 250 / 100%);
+  --popover: rgb(39 29 63 / 100%);
+  --popover-foreground: rgb(250 250 250 / 100%);
+  --primary: rgb(229 231 235 / 100%);
+  --primary-foreground: rgb(39 29 63 / 100%);
+  --secondary: rgb(55 44 86 / 100%);
+  --secondary-foreground: rgb(250 250 250 / 100%);
+  --muted: rgb(55 44 86 / 100%);
+  --muted-foreground: rgb(147 148 208 / 100%);
+  --accent: rgb(55 44 86 / 100%);
+  --accent-foreground: rgb(250 250 250 / 100%);
+  --destructive: rgb(248 113 113 / 100%);
+  --border: rgb(255 255 255 / 10%);
+  --input: rgb(255 255 255 / 15%);
+  --ring: rgb(100 97 163 / 100%);
+  --chart-1: rgb(88 28 135 / 100%);
+  --chart-2: rgb(34 197 94 / 100%);
+  --chart-3: rgb(249 115 22 / 100%);
+  --chart-4: rgb(168 85 247 / 100%);
+  --chart-5: rgb(239 68 68 / 100%);
+  --sidebar: rgb(39 29 63 / 100%);
+  --sidebar-foreground: rgb(250 250 250 / 100%);
+  --sidebar-primary: rgb(88 28 135 / 100%);
+  --sidebar-primary-foreground: rgb(250 250 250 / 100%);
+  --sidebar-accent: rgb(55 44 86 / 100%);
+  --sidebar-accent-foreground: rgb(250 250 250 / 100%);
+  --sidebar-border: rgb(255 255 255 / 10%);
+  --sidebar-ring: rgb(100 97 163 / 100%);
+}

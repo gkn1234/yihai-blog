@@ -1,0 +1,6 @@
+@mixin ellipsis-mixin($line-number:1) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $line-number;
+  -webkit-box-orient: vertical;
+}
