@@ -15,9 +15,6 @@ export default {
     'stylelint-config-recess-order',
   ],
   rules: {
-    // 单行字符数限制扩充到 160
-    '@stylistic/max-line-length': 160,
-
     // 某些函数内的变量忽略大小写限制，为了支持 v-bind() css
     'value-keyword-case': [
       'lower',

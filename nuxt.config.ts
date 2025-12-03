@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     'reka-ui/nuxt',
     '@vueuse/nuxt',
   ],
+  css: [
+    '~/assets/styles/main.scss',
+  ],
   vite: {
     css: {
       preprocessorOptions: {
@@ -25,6 +28,14 @@ export default defineNuxtConfig({
           depth: 3, // include h3 headings
         },
       },
+    },
+  },
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'gkn1234',
+      repo: 'yihai-blog',
+      branch: 'master',
     },
   },
 })
