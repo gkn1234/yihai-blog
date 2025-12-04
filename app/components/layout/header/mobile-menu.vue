@@ -55,38 +55,41 @@ onUnmounted(() => {
     <Transition name="overlay">
       <div
         v-if="isOpen"
-        class="mobile-overlay"
+        class="fixed inset-0 z-[var(--z-overlay)] bg-black/50 backdrop-blur-sm"
         @click="emit('close')"
       />
     </Transition>
 
     <!-- 侧边栏 -->
     <Transition name="slide">
-      <aside v-if="isOpen" class="mobile-menu">
-        <div class="mobile-menu-header">
-          <span class="site-title">{{ t('site.title') }}</span>
+      <aside
+        v-if="isOpen"
+        class="mobile-menu"
+      >
+        <div class="flex items-center h-[var(--header-height)] px-5 border-b border-border">
+          <span class="text-lg font-600 text-text-primary">{{ t('site.title') }}</span>
         </div>
 
-        <nav class="mobile-nav">
+        <nav class="flex-1 flex flex-col gap-1 p-3 overflow-y-auto">
           <NuxtLink
             v-for="item in navItems"
             :key="item.path"
             :to="item.path"
             class="mobile-nav-link"
-            active-class="is-active"
+            active-class="!text-accent !bg-accent-light"
             @click="handleNavClick"
           >
             {{ item.label }}
           </NuxtLink>
         </nav>
 
-        <div class="mobile-menu-footer">
+        <div class="p-4 border-t border-border">
           <!-- i18n 切换 -->
           <DropdownMenuRoot>
             <DropdownMenuTrigger class="locale-trigger-mobile">
-              <span class="i-mdi-translate" />
-              <span>{{ t('locale.switch') }}</span>
-              <span class="i-mdi-chevron-down chevron-icon" />
+              <span class="i-mdi-translate w-5 h-5" />
+              <span class="flex-1 text-left">{{ t('locale.switch') }}</span>
+              <span class="i-mdi-chevron-down w-4.5 h-4.5 ml-auto transition-transform duration-fast chevron-icon" />
             </DropdownMenuTrigger>
 
             <DropdownMenuPortal>
@@ -100,8 +103,8 @@ onUnmounted(() => {
                   class="locale-item-mobile"
                   @click="handleLocaleChange(loc.code)"
                 >
-                  <span class="locale-name">{{ loc.name }}</span>
-                  <span class="locale-code">{{ loc.code.toUpperCase() }}</span>
+                  <span class="font-500">{{ loc.name }}</span>
+                  <span class="text-sm text-text-muted">{{ loc.code.toUpperCase() }}</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenuPortal>
@@ -113,14 +116,6 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
-.mobile-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: var(--z-overlay);
-  background: rgb(0 0 0 / 50%);
-  backdrop-filter: blur(4px);
-}
-
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -135,106 +130,30 @@ onUnmounted(() => {
   box-shadow: var(--shadow-lg);
 }
 
-.mobile-menu-header {
-  display: flex;
-  align-items: center;
-  height: var(--header-height);
-  padding: 0 20px;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.site-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-text-primary);
-}
-
-.mobile-nav {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 4px;
-  padding: 16px 12px;
-  overflow-y: auto;
-}
-
 .mobile-nav-link {
-  display: flex;
-  align-items: center;
-  padding: 14px 16px;
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  transition:
-    color var(--transition-fast),
-    background-color var(--transition-fast);
-
-  &:hover {
-    color: var(--color-text-primary);
-    background-color: var(--color-bg-secondary);
-  }
-
-  &.is-active {
-    color: var(--color-accent);
-    background-color: var(--color-accent-light);
-  }
+  --uno: flex items-center px-4 py-3.5 text-base font-500;
+  --uno: text-text-secondary no-underline rounded-md;
+  --uno: transition-colors duration-fast;
+  --uno: hover:text-text-primary hover:bg-bg-secondary;
 }
 
-.mobile-menu-footer {
-  padding: 16px;
-  border-top: 1px solid var(--color-border);
-}
-
-// Locale dropdown in mobile
 .locale-trigger-mobile {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  background: var(--color-bg-secondary);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  transition:
-    color var(--transition-fast),
-    border-color var(--transition-fast);
+  --uno: flex items-center gap-2 w-full px-4 py-3 text-base font-500;
+  --uno: text-text-secondary bg-bg-secondary cursor-pointer;
+  --uno: border border-solid border-border rounded-md;
+  --uno: transition-colors duration-fast;
 
   &:hover {
-    color: var(--color-text-primary);
-    border-color: var(--color-border-hover);
+    --uno: text-text-primary border-border-hover;
   }
 
   &[data-state="open"] {
-    color: var(--color-text-primary);
-    border-color: var(--color-border-hover);
+    --uno: text-text-primary border-border-hover;
 
     .chevron-icon {
       transform: rotate(180deg);
     }
   }
-
-  span:first-child {
-    width: 20px;
-    height: 20px;
-  }
-
-  span:nth-child(2) {
-    flex: 1;
-    text-align: left;
-  }
-}
-
-.chevron-icon {
-  width: 18px;
-  height: 18px;
-  margin-left: auto;
-  transition: transform var(--transition-fast);
 }
 
 .locale-content-mobile {
@@ -243,10 +162,10 @@ onUnmounted(() => {
   padding: 6px;
   background: var(--color-bg);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: 8px;
   box-shadow: var(--shadow-lg);
   transform-origin: var(--reka-dropdown-menu-content-transform-origin);
-  animation: dropdown-in 0.15s ease-out;
+  animation: dropdown-in 150ms ease-out;
 }
 
 @keyframes dropdown-in {
@@ -262,37 +181,20 @@ onUnmounted(() => {
 }
 
 .locale-item-mobile {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 14px;
-  font-size: 0.9375rem;
-  color: var(--color-text-primary);
-  cursor: pointer;
-  outline: none;
-  border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast);
+  --uno: flex items-center justify-between gap-2 px-3.5 py-3;
+  --uno: text-base text-text-primary cursor-pointer outline-none rounded;
+  --uno: transition-colors duration-fast;
 
   &:hover,
   &[data-highlighted] {
-    background-color: var(--color-accent-light);
+    --uno: bg-accent-light;
   }
-}
-
-.locale-name {
-  font-weight: 500;
-}
-
-.locale-code {
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
 }
 
 // Transitions
 .overlay-enter-active,
 .overlay-leave-active {
-  transition: opacity var(--transition-normal);
+  transition: opacity 250ms ease;
 }
 
 .overlay-enter-from,
@@ -302,7 +204,7 @@ onUnmounted(() => {
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: transform var(--transition-normal);
+  transition: transform 250ms ease;
 }
 
 .slide-enter-from,
@@ -310,4 +212,3 @@ onUnmounted(() => {
   transform: translateX(100%);
 }
 </style>
-

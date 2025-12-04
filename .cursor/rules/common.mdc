@@ -2,11 +2,26 @@
 alwaysApply: true
 ---
 
+## 基础规则
+
 Always use context7 when I need code generation, setup or configuration steps, or
 library/API documentation. This means you should automatically use the Context7 MCP
 tools to resolve library id and get library docs without me having to explicitly ask.
 
 除非我特别提及，否则不要自动处理 eslint、stylelint 的问题
+
+## 技术栈
+
+这是一个基于 Nuxt 4 的个人博客项目，使用了现代化的前端技术栈。
+
+- **框架**: Nuxt 4 + Vue 3 (Composition API)
+- **样式**: SCSS + UnoCSS (Wind4 + Attributify + Icons)
+- **UI 组件库**: Reka UI (无样式组件库)
+- **内容管理**: Nuxt Content v3
+- **国际化**: @nuxtjs/i18n
+- **工具库**: VueUse
+- **代码规范**: ESLint (@antfu/eslint-config) + Stylelint
+- **包管理**: pnpm
 
 ## 编码规范
 

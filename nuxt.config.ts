@@ -48,4 +48,7 @@ export default defineNuxtConfig({
       branch: 'master',
     },
   },
+  devServer: {
+    port: 3010,
+  },
 })
