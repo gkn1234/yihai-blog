@@ -1,68 +1,64 @@
 :root {
-  --radius: 0.625rem;
-  --background: rgb(255 255 255 / 100%);
-  --foreground: rgb(20 14 35 / 100%);
-  --card: rgb(255 255 255 / 100%);
-  --card-foreground: rgb(20 14 35 / 100%);
-  --popover: rgb(255 255 255 / 100%);
-  --popover-foreground: rgb(20 14 35 / 100%);
-  --primary: rgb(39 29 63 / 100%);
-  --primary-foreground: rgb(250 250 250 / 100%);
-  --secondary: rgb(240 240 250 / 100%);
-  --secondary-foreground: rgb(39 29 63 / 100%);
-  --muted: rgb(240 240 250 / 100%);
-  --muted-foreground: rgb(100 97 163 / 100%);
-  --accent: rgb(240 240 250 / 100%);
-  --accent-foreground: rgb(39 29 63 / 100%);
-  --destructive: rgb(239 68 68 / 100%);
-  --border: rgb(229 231 235 / 100%);
-  --input: rgb(229 231 235 / 100%);
-  --ring: rgb(147 148 208 / 100%);
-  --chart-1: rgb(234 179 8 / 100%);
-  --chart-2: rgb(6 182 212 / 100%);
-  --chart-3: rgb(59 53 129 / 100%);
-  --chart-4: rgb(163 230 53 / 100%);
-  --chart-5: rgb(249 115 22 / 100%);
-  --sidebar: rgb(250 250 250 / 100%);
-  --sidebar-foreground: rgb(20 14 35 / 100%);
-  --sidebar-primary: rgb(39 29 63 / 100%);
-  --sidebar-primary-foreground: rgb(250 250 250 / 100%);
-  --sidebar-accent: rgb(240 240 250 / 100%);
-  --sidebar-accent-foreground: rgb(39 29 63 / 100%);
-  --sidebar-border: rgb(229 231 235 / 100%);
-  --sidebar-ring: rgb(147 148 208 / 100%);
+  // Layout
+  --header-height: 64px;
+  --container-max-width: 1200px;
+  --container-padding: 24px;
+
+  // Colors - Light Mode
+  --color-bg: #fff;
+  --color-bg-secondary: #f8f9fa;
+  --color-bg-elevated: rgb(255 255 255 / 85%);
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #64748b;
+  --color-text-muted: #94a3b8;
+  --color-border: rgb(0 0 0 / 8%);
+  --color-border-hover: rgb(0 0 0 / 15%);
+
+  // Accent
+  --color-accent: #6366f1;
+  --color-accent-hover: #4f46e5;
+  --color-accent-light: rgb(99 102 241 / 10%);
+
+  // Shadows
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+
+  // Transitions
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  // Border Radius
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  // Z-index
+  --z-header: 100;
+  --z-dropdown: 200;
+  --z-mobile-menu: 300;
+  --z-overlay: 250;
 }
 
 .dark {
-  --background: rgb(20 14 35 / 100%);
-  --foreground: rgb(250 250 250 / 100%);
-  --card: rgb(39 29 63 / 100%);
-  --card-foreground: rgb(250 250 250 / 100%);
-  --popover: rgb(39 29 63 / 100%);
-  --popover-foreground: rgb(250 250 250 / 100%);
-  --primary: rgb(229 231 235 / 100%);
-  --primary-foreground: rgb(39 29 63 / 100%);
-  --secondary: rgb(55 44 86 / 100%);
-  --secondary-foreground: rgb(250 250 250 / 100%);
-  --muted: rgb(55 44 86 / 100%);
-  --muted-foreground: rgb(147 148 208 / 100%);
-  --accent: rgb(55 44 86 / 100%);
-  --accent-foreground: rgb(250 250 250 / 100%);
-  --destructive: rgb(248 113 113 / 100%);
-  --border: rgb(255 255 255 / 10%);
-  --input: rgb(255 255 255 / 15%);
-  --ring: rgb(100 97 163 / 100%);
-  --chart-1: rgb(88 28 135 / 100%);
-  --chart-2: rgb(34 197 94 / 100%);
-  --chart-3: rgb(249 115 22 / 100%);
-  --chart-4: rgb(168 85 247 / 100%);
-  --chart-5: rgb(239 68 68 / 100%);
-  --sidebar: rgb(39 29 63 / 100%);
-  --sidebar-foreground: rgb(250 250 250 / 100%);
-  --sidebar-primary: rgb(88 28 135 / 100%);
-  --sidebar-primary-foreground: rgb(250 250 250 / 100%);
-  --sidebar-accent: rgb(55 44 86 / 100%);
-  --sidebar-accent-foreground: rgb(250 250 250 / 100%);
-  --sidebar-border: rgb(255 255 255 / 10%);
-  --sidebar-ring: rgb(100 97 163 / 100%);
+  --color-bg: #0f0f14;
+  --color-bg-secondary: #1a1a24;
+  --color-bg-elevated: rgb(26 26 36 / 90%);
+  --color-text-primary: #f1f5f9;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-border: rgb(255 255 255 / 8%);
+  --color-border-hover: rgb(255 255 255 / 15%);
+
+  // Accent - slightly brighter for dark mode
+  --color-accent: #818cf8;
+  --color-accent-hover: #a5b4fc;
+  --color-accent-light: rgb(129 140 248 / 15%);
+
+  // Shadows - more subtle in dark mode
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 30%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 40%), 0 2px 4px -2px rgb(0 0 0 / 30%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 50%), 0 4px 6px -4px rgb(0 0 0 / 40%);
 }

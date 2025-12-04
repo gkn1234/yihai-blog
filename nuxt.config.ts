@@ -8,7 +8,17 @@ export default defineNuxtConfig({
     '@unocss/nuxt',
     'reka-ui/nuxt',
     '@vueuse/nuxt',
+    '@nuxtjs/i18n',
   ],
+  i18n: {
+    defaultLocale: 'zh',
+    locales: [
+      { code: 'zh', name: '中文', file: 'zh.json' },
+      { code: 'en', name: 'English', file: 'en.json' },
+    ],
+    strategy: 'prefix_except_default',
+    langDir: 'locales',
+  },
   css: [
     '~/assets/styles/main.scss',
   ],

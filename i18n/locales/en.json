@@ -1,0 +1,15 @@
+{
+  "site": {
+    "title": "Yunshen's Dream"
+  },
+  "nav": {
+    "home": "Home",
+    "blog": "Blog"
+  },
+  "locale": {
+    "switch": "Switch Language",
+    "zh": "中文",
+    "en": "English"
+  }
+}
+

@@ -1,0 +1,15 @@
+{
+  "site": {
+    "title": "云深亦知梦"
+  },
+  "nav": {
+    "home": "首页",
+    "blog": "博客"
+  },
+  "locale": {
+    "switch": "切换语言",
+    "zh": "中文",
+    "en": "English"
+  }
+}
+

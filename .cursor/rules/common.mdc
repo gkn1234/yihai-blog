@@ -7,3 +7,14 @@ library/API documentation. This means you should automatically use the Context7 
 tools to resolve library id and get library docs without me having to explicitly ask.
 
 除非我特别提及，否则不要自动处理 eslint、stylelint 的问题
+
+## 编码规范
+
+### 命名规范
+- 文件命名使用 kebab-case
+- 组件命名使用 PascalCase
+- 变量命名使用 camelCase
+- 函数命名使用 camelCase
+- 常量命名使用 UPPER_CASE
+- 类型命名使用 PascalCase
+- 接口命名使用 PascalCase
