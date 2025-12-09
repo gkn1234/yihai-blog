@@ -1,4 +1,30 @@
-<!-- 2ca3a0ee-aff9-4af7-a899-6a4dc197e5c0 30032898-9189-4826-a46e-5a150889d854 -->
+---
+name: 博客 LayoutHeader 实现计划
+overview: ""
+todos:
+  - id: d231edc2-e0cd-46ef-bf7e-b506e29b3d7e
+    content: 安装 @nuxtjs/i18n 并配置 nuxt.config.ts
+    status: pending
+  - id: 04cc85c4-6e24-45b7-b31e-9a3b1d137484
+    content: 创建 i18n 翻译文件 (zh.json, en.json)
+    status: pending
+  - id: b3c08f74-a7e9-4c01-9c6f-cf1a19d07aec
+    content: 在 vars.scss 中定义主题 CSS 变量
+    status: pending
+  - id: c8b51209-a193-48bc-8928-edaa3ceea15a
+    content: 实现 header.vue 主组件（结构 + 滚动逻辑）
+    status: pending
+  - id: d6f53c94-9ccd-4642-b474-3a3b2a1b5a9e
+    content: 实现 LocaleDropdown.vue 语言切换下拉
+    status: pending
+  - id: 896e82f7-85e9-432f-9e49-7cc226bb7b5b
+    content: 实现 MobileMenu.vue 移动端侧边栏
+    status: pending
+  - id: aeb9ed12-c976-4913-802e-9fc9f5a49ef8
+    content: 在 default.vue 中集成 Header 组件
+    status: pending
+---
+
 # 博客 LayoutHeader 实现计划
 
 ## 需求概览
@@ -127,13 +153,3 @@ watch(y, (newY) => {
 | `i18n/locales/en.json` | 英文翻译文件 |
 
 | `app/layout/default.vue` | 引入 Header 组件 |
-
-### To-dos
-
-- [ ] 安装 @nuxtjs/i18n 并配置 nuxt.config.ts
-- [ ] 创建 i18n 翻译文件 (zh.json, en.json)
-- [ ] 在 vars.scss 中定义主题 CSS 变量
-- [ ] 实现 header.vue 主组件（结构 + 滚动逻辑）
-- [ ] 实现 LocaleDropdown.vue 语言切换下拉
-- [ ] 实现 MobileMenu.vue 移动端侧边栏
-- [ ] 在 default.vue 中集成 Header 组件

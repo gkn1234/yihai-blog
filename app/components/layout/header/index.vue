@@ -46,9 +46,9 @@ useEventListener('scroll', handleScroll)
   z-index: var(--z-header);
   width: 100%;
   height: 4rem;
-  padding-inline: var(--container-padding);
-  background: var(--color-bg-elevated);
-  border-bottom: 1px solid var(--color-border);
+  padding-inline: 1.5rem;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
   transition: translate 250ms ease;
 }
 </style>

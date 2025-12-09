@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { data: home } = await useAsyncData(() => queryCollection('content').path('/').first())
+console.log(home.value)
 
 useSeoMeta({
   title: home.value?.title,

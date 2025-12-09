@@ -1,47 +1,119 @@
 :root {
-  // Layout
-  --header-height: 64px;
-  --container-max-width: 1200px;
-  --container-padding: 24px;
+  /* 基础设计变量 */
+  --radius: 0.625rem; /* 圆角半径 - 用于统一控制所有组件的圆角大小 */
 
   // Z-index
   --z-header: 100;
   --z-dropdown: 200;
   --z-overlay: 250;
-  --z-mobile-menu: 300;
+  --z-drawer: 300;
 
-  // Colors - Light Mode
-  --color-bg: #fff;
-  --color-bg-secondary: #f8f9fa;
-  --color-bg-elevated: rgb(255 255 255 / 85%);
-  --color-text-primary: #1a1a2e;
-  --color-text-secondary: #64748b;
-  --color-text-muted: #94a3b8;
-  --color-border: rgb(0 0 0 / 8%);
-  --color-border-hover: rgb(0 0 0 / 15%);
-  --color-accent: #6366f1;
-  --color-accent-hover: #4f46e5;
-  --color-accent-light: rgb(99 102 241 / 10%);
+  /* 背景与前景 */
+  --background: rgb(255 255 255 / 100%); /* 页面主背景色 */
+  --foreground: rgb(37 37 37 / 100%); /* 主要文本颜色 */
 
-  // Shadows
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 5%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -2px rgb(0 0 0 / 10%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -4px rgb(0 0 0 / 10%);
+  /* 卡片组件 */
+  --card: rgb(255 255 255 / 100%); /* 卡片背景色 */
+  --card-foreground: rgb(37 37 37 / 100%); /* 卡片内文本颜色 */
+
+  /* 弹出层 */
+  --popover: rgb(255 255 255 / 100%); /* 弹出层背景色 */
+  --popover-foreground: rgb(37 37 37 / 100%); /* 弹出层文本颜色 */
+
+  /* 主要操作 */
+  --primary: rgb(52 52 52 / 100%); /* 主色调 - 用于主要按钮、链接等 */
+  --primary-foreground: rgb(251 251 251 / 100%); /* 主色调上的文本颜色 */
+
+  /* 次要操作 */
+  --secondary: rgb(247 247 247 / 100%); /* 次要色调 - 用于次要按钮 */
+  --secondary-foreground: rgb(52 52 52 / 100%); /* 次要色调上的文本颜色 */
+
+  /* 静音/弱化 */
+  --muted: rgb(247 247 247 / 100%); /* 弱化背景 - 用于禁用状态、辅助信息区域 */
+  --muted-foreground: rgb(142 142 142 / 100%); /* 弱化文本 - 用于辅助文字 */
+
+  /* 强调/高亮 */
+  --accent: rgb(247 247 247 / 100%); /* 强调背景 - 用于悬停状态、选中项 */
+  --accent-foreground: rgb(52 52 52 / 100%); /* 强调文本颜色 */
+
+  /* 破坏性操作 */
+  --destructive: rgb(239 68 68 / 100%); /* 危险操作颜色 - 用于删除、错误等 */
+
+  /* 边框与输入 */
+  --border: rgb(235 235 235 / 100%); /* 边框颜色 */
+  --input: rgb(235 235 235 / 100%); /* 输入框边框颜色 */
+  --ring: rgb(181 181 181 / 100%); /* 焦点环颜色 - 用于键盘导航时的焦点指示 */
+
+  /* 图表颜色 - 用于数据可视化 */
+  --chart-1: rgb(255 159 64 / 100%); /* 图表颜色 1 - 橙色 */
+  --chart-2: rgb(75 192 192 / 100%); /* 图表颜色 2 - 青色 */
+  --chart-3: rgb(54 69 145 / 100%); /* 图表颜色 3 - 蓝色 */
+  --chart-4: rgb(255 238 88 / 100%); /* 图表颜色 4 - 黄色 */
+  --chart-5: rgb(255 205 86 / 100%); /* 图表颜色 5 - 金色 */
+
+  /* 侧边栏专用变量 */
+  --sidebar: rgb(251 251 251 / 100%); /* 侧边栏背景色 */
+  --sidebar-foreground: rgb(37 37 37 / 100%); /* 侧边栏文本颜色 */
+  --sidebar-primary: rgb(52 52 52 / 100%); /* 侧边栏主色调 */
+  --sidebar-primary-foreground: rgb(251 251 251 / 100%); /* 侧边栏主色调文本 */
+  --sidebar-accent: rgb(247 247 247 / 100%); /* 侧边栏强调色 - 用于悬停、选中 */
+  --sidebar-accent-foreground: rgb(52 52 52 / 100%); /* 侧边栏强调文本 */
+  --sidebar-border: rgb(235 235 235 / 100%); /* 侧边栏边框颜色 */
+  --sidebar-ring: rgb(181 181 181 / 100%); /* 侧边栏焦点环颜色 */
 }
 
+/* 暗色主题 */
 .dark {
-  --color-bg: #0f0f14;
-  --color-bg-secondary: #1a1a24;
-  --color-bg-elevated: rgb(26 26 36 / 90%);
-  --color-text-primary: #f1f5f9;
-  --color-text-secondary: #94a3b8;
-  --color-text-muted: #64748b;
-  --color-border: rgb(255 255 255 / 8%);
-  --color-border-hover: rgb(255 255 255 / 15%);
-  --color-accent: #818cf8;
-  --color-accent-hover: #a5b4fc;
-  --color-accent-light: rgb(129 140 248 / 15%);
-  --shadow-sm: 0 1px 2px rgb(0 0 0 / 30%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 40%), 0 2px 4px -2px rgb(0 0 0 / 30%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 50%), 0 4px 6px -4px rgb(0 0 0 / 40%);
+  /* 背景与前景 */
+  --background: rgb(37 37 37 / 100%); /* 页面主背景色 - 深灰黑色 */
+  --foreground: rgb(251 251 251 / 100%); /* 主要文本颜色 - 接近白色 */
+
+  /* 卡片组件 */
+  --card: rgb(52 52 52 / 100%); /* 卡片背景色 - 深灰色 */
+  --card-foreground: rgb(251 251 251 / 100%); /* 卡片内文本颜色 */
+
+  /* 弹出层 */
+  --popover: rgb(52 52 52 / 100%); /* 弹出层背景色 */
+  --popover-foreground: rgb(251 251 251 / 100%); /* 弹出层文本颜色 */
+
+  /* 主要操作 */
+  --primary: rgb(235 235 235 / 100%); /* 主色调 - 浅灰色（暗色模式下反转） */
+  --primary-foreground: rgb(52 52 52 / 100%); /* 主色调上的文本颜色 */
+
+  /* 次要操作 */
+  --secondary: rgb(69 69 69 / 100%); /* 次要色调 - 中深灰 */
+  --secondary-foreground: rgb(251 251 251 / 100%); /* 次要色调上的文本颜色 */
+
+  /* 静音/弱化 */
+  --muted: rgb(69 69 69 / 100%); /* 弱化背景 */
+  --muted-foreground: rgb(181 181 181 / 100%); /* 弱化文本 - 中浅灰 */
+
+  /* 强调/高亮 */
+  --accent: rgb(69 69 69 / 100%); /* 强调背景 */
+  --accent-foreground: rgb(251 251 251 / 100%); /* 强调文本颜色 */
+
+  /* 破坏性操作 */
+  --destructive: rgb(248 113 113 / 100%); /* 危险操作颜色 - 红色（暗色下稍微浅一些） */
+
+  /* 边框与输入 */
+  --border: rgb(255 255 255 / 10%); /* 边框颜色 - 10% 透明度的白色 */
+  --input: rgb(255 255 255 / 15%); /* 输入框边框颜色 - 15% 透明度的白色 */
+  --ring: rgb(142 142 142 / 100%); /* 焦点环颜色 */
+
+  /* 图表颜色 - 用于数据可视化 */
+  --chart-1: rgb(99 102 241 / 100%); /* 图表颜色 1 - 靛蓝色 */
+  --chart-2: rgb(34 197 94 / 100%); /* 图表颜色 2 - 绿色 */
+  --chart-3: rgb(255 205 86 / 100%); /* 图表颜色 3 - 黄色 */
+  --chart-4: rgb(236 72 153 / 100%); /* 图表颜色 4 - 粉色 */
+  --chart-5: rgb(251 146 60 / 100%); /* 图表颜色 5 - 橙色 */
+
+  /* 侧边栏专用变量 */
+  --sidebar: rgb(52 52 52 / 100%); /* 侧边栏背景色 */
+  --sidebar-foreground: rgb(251 251 251 / 100%); /* 侧边栏文本颜色 */
+  --sidebar-primary: rgb(99 102 241 / 100%); /* 侧边栏主色调 - 靛蓝色 */
+  --sidebar-primary-foreground: rgb(251 251 251 / 100%); /* 侧边栏主色调文本 */
+  --sidebar-accent: rgb(69 69 69 / 100%); /* 侧边栏强调色 */
+  --sidebar-accent-foreground: rgb(251 251 251 / 100%); /* 侧边栏强调文本 */
+  --sidebar-border: rgb(255 255 255 / 10%); /* 侧边栏边框颜色 - 10% 透明度的白色 */
+  --sidebar-ring: rgb(142 142 142 / 100%); /* 侧边栏焦点环颜色 */
 }
