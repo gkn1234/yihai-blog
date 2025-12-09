@@ -1,0 +1,76 @@
+{
+  "npm.packageManager": "pnpm",
+
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+
+  // Enable eslint for all supported languages
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "svelte",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
+  ],
+
+  // Stylelint
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": [
+    "css",
+    "scss",
+    "postcss",
+    "vue"
+  ],
+
+  "editor.tabSize": 2,
+
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.scss": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+
+  // Tailwind CSS 支持非 class/className
+  "tailwindCSS.experimental.classRegex": [
+    // CVA 支持 - 匹配 cva() 函数中的所有字符串
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    // CVA variants 对象支持 - 匹配多行嵌套结构
+    ["cva\\(([\\s\\S]*?)\\)(?=;|\\n|$)", "[\"'`]([^\"'`]*)[\"'`]"],
+    // cn/clsx 支持
+    ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+    // twMerge 支持
+    ["twMerge\\(([^)]*)\\)", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)"],
+    // className/class 属性支持
+    ["className\\s*[:=]\\s*[\"'`]([^\"'`]*)[\"'`]", "([^\"'`]*)"],
+    ["class\\s*[:=]\\s*[\"'`]([^\"'`]*)[\"'`]", "([^\"'`]*)"]
+  ]
+}
