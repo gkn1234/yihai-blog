@@ -6,10 +6,12 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { buildConfig } from 'payload'
 import sharp from 'sharp'
 
-import { 
-  Users, Media } from './collections'
+import {
+  Media,
+  Users,
+} from './collections'
 
-  const filename = fileURLToPath(import.meta.url)
+const filename = fileURLToPath(import.meta.url)
 const dir = dirname(filename)
 
 export default buildConfig({
