@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(superpowers:writing-plans)",
+      "mcp__plugin_context7_context7__resolve-library-id",
+      "mcp__plugin_context7_context7__query-docs",
+      "Skill(superpowers:subagent-driven-development)",
+      "mcp__ide__getDiagnostics",
+      "Bash(pnpm generate:types:*)",
+      "Bash(pnpm exec tsc:*)",
+      "Bash(git -C \"D:\\\\fe-newera\\\\yihai-blog\" status)",
+      "Bash(git -C \"D:\\\\fe-newera\\\\yihai-blog\" add src/collections/tags.ts src/collections/posts.ts src/collections/index.ts src/payload.config.ts src/payload-types.ts)",
+      "Bash(git -C \"D:\\\\fe-newera\\\\yihai-blog\" commit -m \"$\\(cat <<''EOF''\nfeat: add Posts and Tags collections with drafts support\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git -C \"D:\\\\fe-newera\\\\yihai-blog\" log -1 --oneline)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(ls:*)",
+      "Bash(npx tsc:*)"
+    ]
+  }
+}

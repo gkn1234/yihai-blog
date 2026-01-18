@@ -1,63 +1,28 @@
-import { fileURLToPath } from 'node:url'
-import { headers as getHeaders } from 'next/headers.js'
-import Image from 'next/image'
-import { getPayload } from 'payload'
-import React from 'react'
-
-import config from '@/payload.config'
+// src/app/(frontend)/page.tsx
+import { Container } from '@/components/layout'
+import { PostList } from '@/components/posts'
+import { getPosts } from '@/lib/payload'
 
 export default async function HomePage() {
-  const headers = await getHeaders()
-  const payloadConfig = await config
-  const payload = await getPayload({ config: payloadConfig })
-  const { user } = await payload.auth({ headers })
-
-  const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
+  const { docs: posts } = await getPosts({ limit: 12 })
 
   return (
-    <div className="home px-1">
-      <div className="content">
-        <picture>
-          <source srcSet="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-favicon.svg" />
-          <Image
-            alt="Payload Logo"
-            height={65}
-            src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/ui/src/assets/payload-favicon.svg"
-            width={65}
-          />
-        </picture>
-        {!user && <h1>Welcome to your new project.</h1>}
-        {user && (
-          <h1>
-            Welcome back,
-            {user.email}
-          </h1>
-        )}
-        <div className="links">
-          <a
-            className="admin"
-            href={payloadConfig.routes.admin}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Go to admin panel
-          </a>
-          <a
-            className="docs"
-            href="https://payloadcms.com/docs"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Documentation
-          </a>
-        </div>
-      </div>
-      <div className="footer">
-        <p>Update this page by editing</p>
-        <a className="codeLink" href={fileURL}>
-          <code>app/(frontend)/page.tsx</code>
-        </a>
-      </div>
-    </div>
+    <Container className="py-12">
+      <section className="mb-12 text-center">
+        <h1 className="mb-3 text-4xl font-bold text-foreground">
+          云深亦知梦
+        </h1>
+        <p className="text-lg text-muted-foreground">
+          记录技术探索与生活感悟
+        </p>
+      </section>
+
+      <section>
+        <h2 className="mb-6 text-xl font-semibold text-foreground">
+          最新文章
+        </h2>
+        <PostList posts={posts} />
+      </section>
+    </Container>
   )
 }

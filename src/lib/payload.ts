@@ -1,4 +1,5 @@
 // src/lib/payload.ts
+import type { Where } from 'payload'
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 
@@ -15,7 +16,7 @@ export async function getPosts(options?: {
 }) {
   const payload = await getPayloadClient()
 
-  const where: Record<string, unknown> = {
+  const where: Where = {
     _status: { equals: 'published' },
   }
 
