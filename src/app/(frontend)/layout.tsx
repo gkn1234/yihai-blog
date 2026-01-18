@@ -1,18 +1,22 @@
-import React from 'react'
+// src/app/(frontend)/layout.tsx
+import type { ReactNode } from 'react'
+import { Header, Footer } from '@/components/layout'
 import './global.css'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  title: '云深亦知梦',
+  description: '记录技术探索与生活感悟',
 }
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
-  const { children } = props
-
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <main>{children}</main>
+    <html lang="zh-CN">
+      <body className="min-h-screen bg-background text-foreground antialiased">
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
