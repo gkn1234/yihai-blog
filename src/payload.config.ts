@@ -8,6 +8,8 @@ import sharp from 'sharp'
 
 import {
   Media,
+  Posts,
+  Tags,
   Users,
 } from './collections'
 
@@ -21,7 +23,7 @@ export default buildConfig({
       baseDir: resolve(dir),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Posts, Tags],
   editor: lexicalEditor(),
   secret: env.PAYLOAD_SECRET ?? '',
   typescript: {
